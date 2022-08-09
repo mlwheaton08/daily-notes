@@ -71,7 +71,18 @@ notes.push({
 // }
 // console.log(filteredNotes);
 
+// console.log("***  Note Articles  ***");
+// for (const note of notes) {
+//     console.log(`<article>${note.text}</article>`)
+// };
+
+let noteSection = '';
 console.log("***  Note Articles  ***");
 for (const note of notes) {
-    console.log(`<article>${note.text}</article>`)
-}
+    noteSection += `<article>\n\t${note.text}`;
+    for (const topic of note.topics) {
+        noteSection += `\n\t<section>${topic}</section>`
+    }
+    noteSection += `\n</article>\n`;
+};
+console.log(noteSection);
